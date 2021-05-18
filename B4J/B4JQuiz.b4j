@@ -1,0 +1,88 @@
+﻿AppType=JavaFX
+Build1=Default,b4j.quiz
+File1=AnswerItem.bjl
+File2=b4xquiz.ico
+File3=icon.png
+File4=loading.gif
+File5=LoginPage.bjl
+File6=QuestionPage.bjl
+File7=Splash.bjl
+File8=TopicItem.bjl
+File9=TopicPage.bjl
+FileGroup1=Default Group
+FileGroup2=Default Group
+FileGroup3=Default Group
+FileGroup4=Default Group
+FileGroup5=Default Group
+FileGroup6=Default Group
+FileGroup7=Default Group
+FileGroup8=Default Group
+FileGroup9=Default Group
+Group=Default Group
+Library1=jcore
+Library10=xcustomlistview
+Library11=b4xgifview
+Library2=jfx
+Library3=b4xpages
+Library4=jxui
+Library5=xui views
+Library6=keyvaluestore
+Library7=jokhttputils2
+Library8=json
+Library9=clxtoastmessage
+Module1=B4XMainPage
+Module2=B4XPageLogin
+Module3=B4XPageQuestion
+Module4=B4XPageTopic
+Module5=CommonUtility
+Module6=LoginData
+NumberOfFiles=9
+NumberOfLibraries=11
+NumberOfModules=6
+Version=8.5
+@EndOfDesignText@
+#Region Project Attributes 
+	#MainFormWidth: 600
+	#MainFormHeight: 600 
+#End Region
+#PackagerProperty: IncludedModules = jdk.crypto.ec
+#PackagerProperty: IconFile = ..\Files\b4xquiz.ico
+'#CustomBuildAction: After Packager, C:\Program Files (x86)\Inno Setup 6\Compil32.exe, /cc ../InstallerScript.iss
+Sub Process_Globals
+	Public fx As JFX
+	Private MainForm As Form
+	Public UID As String
+	Public PWD As String
+	'Public strURL As String = "https://api.puterise.com:17182/"
+	Public strURL As String = "http://localhost:17180/"
+	Public TopicID As Int
+End Sub
+
+Sub AppStart (Form1 As Form, Args() As String)
+	MainForm = Form1
+	Dim PagesManager As B4XPagesManager
+	PagesManager.Initialize(MainForm)	
+End Sub
+
+'Template version: B4J-1.0
+#Region Delegates
+Sub MainForm_FocusChanged (HasFocus As Boolean)
+	B4XPages.Delegate.MainForm_FocusChanged(HasFocus)
+End Sub
+
+Sub MainForm_Resize (Width As Double, Height As Double)
+	B4XPages.Delegate.MainForm_Resize(Width, Height)
+End Sub
+
+Sub MainForm_Closed
+	B4XPages.Delegate.MainForm_Closed
+End Sub
+
+Sub MainForm_CloseRequest (EventData As Event)
+	B4XPages.Delegate.MainForm_CloseRequest(EventData)
+End Sub
+
+Public Sub MainForm_IconifiedChanged (Iconified As Boolean)
+	B4XPages.Delegate.MainForm_IconifiedChanged(Iconified)
+End Sub
+#End Region
